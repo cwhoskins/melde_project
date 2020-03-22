@@ -12,9 +12,6 @@ function [sidelobe,sidelobe_theta] = find_sidelobes(u_theta, theta)
         sidelobe = [sidelobe zero_value];
         sidelobe_theta = [sidelobe_theta 0];
     end
-    if(pi_value > zero_value && pi_value > u_theta(numel(u_theta)-1))
-        sidelobe = [sidelobe pi_value];
-        sidelobe_theta = [sidelobe_theta 180];
-    end
+    if(pi_value > zero_value && pi_value > 
 end
 
