@@ -6,6 +6,6 @@ for theta = 1:num_samples
     phi_exp = phase + (amplitude .* (k * d * cosd(theta)));
     af(theta) = sum(exp(1i .* n .* phi_exp)); 
 end
-af = af ./ max(abs(af));
+%af = af ./ max(abs(af));
 antenna_factor = af;
 end

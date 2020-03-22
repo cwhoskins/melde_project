@@ -10,8 +10,9 @@ k = 2*pi / lambda;
 d = lambda / 2;
 num_elements = 8;
 amp = ones(1, num_elements);
-phase = 0:(num_elements-1);
-phase = phase .* (pi/num_elements); 
+%phase = 0:(num_elements-1);
+%phase = phase .* (pi/num_elements);
+phase = pi / num_elements;
 %Calculate Antenna Factor
 af = antenna_factor(numel(u), num_elements, k, d, amp, phase);
 %Compute U of the array
