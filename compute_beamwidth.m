@@ -10,13 +10,14 @@ end
 half_max_u = 0.5 *max(u_theta);
 half_dif = max(u_theta) - u_theta(1);
 half_idx = 0;
-for idx = 1 : numel(u_theta)
-    if (abs(u_theta(idx)-half_max_u) < half_dif)
-        half_dif = abs(u_theta(idx)-half_max_u);
+start_idx = 0.5 * numel(u_theta);
+for idx = start_idx : numel(u_theta)
+    if (abs(u_theta(idx)) <= half_max_u)
         half_idx = idx;
+        break;
     end
 end
-beamwidth_rad = 2 * delta_theta * abs(max_theta_idx - half_idx);
+beamwidth_rad = 2 * delta_theta * abs(start_idx - half_idx);
 beamwidth = beamwidth_rad * (180/pi);
 end
 
